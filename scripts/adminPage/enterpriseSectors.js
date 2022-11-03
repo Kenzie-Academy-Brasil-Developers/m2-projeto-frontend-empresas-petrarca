@@ -1,5 +1,5 @@
 import { requestEnterprises } from "../requests/allEnterprises.js"
-import { requestSectors } from "../requests/sectors.js";
+import { requestDepartment, requestAllDepartments } from "../requests/adminRequests/enterpriseDepartments.js"
 
 const selectEnterprise = document.querySelector('#select-enterprise-adm')
 
@@ -21,45 +21,51 @@ export async function selectEnterpriseAdm() {
 }
 
 export async function enterpriseDepartmentFilter(enterpriseId) {
-    console.log(enterpriseId)
+    if(enterpriseId == "Todos"){
+        let request = await requestAllDepartments()
+        departmentInsert(request)
+    } else {
+        let request = await requestDepartment(enterpriseId)
+        departmentInsert(request)
+    }
 }
 
+const departmentDisplay = document.querySelector(".department-display")
 
+export function departmentInsert(departments){
+    departmentDisplay.innerText = ""
+    departments.forEach(department => {
+        const card = document.createElement('div')
+        const userDataBox = document.createElement('div')
+        const depName = document.createElement('h5')
+        const depDescription = document.createElement('p')
+        const companyName = document.createElement('p')
 
+        const options = document.createElement('div')
+        const view = document.createElement('button')
+        const edit = document.createElement('button')
+        const exclude = document.createElement('button')
+        const viewImg = document.createElement('img')
+        const editImg = document.createElement('img')
+        const excludeImg = document.createElement('img')
+        
 
+        depName.innerText = department.name
+        depDescription.innerText = department.description
+        companyName.innerText = department.companies.name
 
+        console.log(department.companies)
 
+        viewImg.src = "../../src/view.svg"
+        editImg.src = "../../src/editBtn.svg"
+        excludeImg.src = "../../src/delete.svg"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// function sectorPrinterAdm(companies) {    
-//     companies.forEach((company) => {
-//         const card = document.createElement('li')
-//         const name = document.createElement('h3')
-//         const openingHour = document.createElement('p')
-//         const sectorDisplay = document.createElement('div')
-//         const sector = document.createElement('p')
-
-//         name.innerText = company.name
-//         openingHour.innerText = company.opening_hours
-//         sector.innerText = company.sectors.description
-
-
-//         sectorDisplay.append(sector)
-//         card.append(name, openingHour, sectorDisplay)
-//         displayEnterprises.append(card)
-//     })
-// }
+        userDataBox.append(depName, depDescription, companyName)
+        view.append(viewImg)
+        edit.append(editImg)
+        exclude.append(excludeImg)
+        options.append(view, edit, exclude)
+        card.append(userDataBox, options)
+        departmentDisplay.append(card)
+    })
+}
