@@ -1,6 +1,6 @@
 import { requestAllUsers } from "../requests/adminRequests/allUsers.js"
 import { deleteUser } from "./buttons/deleteUser.js"
-
+import { editUser } from "./buttons/editUser.js"
 const allUsersDisplay = document.querySelector('.registered-users-display')
 
 export async function renderAllUsers() {
@@ -43,6 +43,11 @@ export async function renderAllUsers() {
             options.append(edit, exclude)
             card.append(userDataBox, options)
             allUsersDisplay.append(card)
+
+            edit.addEventListener('click', (event) => {
+                event.preventDefault()
+                editUser(user.uuid)
+            })
 
             exclude.addEventListener('click', (event) => {
                 event.preventDefault()
