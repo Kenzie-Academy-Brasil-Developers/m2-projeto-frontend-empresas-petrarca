@@ -49,15 +49,17 @@ export function departmentInsert(departments){
         const editImg = document.createElement('img')
         const excludeImg = document.createElement('img')
         
+        card.classList.add("department-card")
+        userDataBox.classList.add("department-description")
+        options.classList.add("department-options")
 
         depName.innerText = department.name
         depDescription.innerText = department.description
         companyName.innerText = department.companies.name
 
-        console.log(department.companies)
 
         viewImg.src = "../../src/view.svg"
-        editImg.src = "../../src/editBtn.svg"
+        editImg.src = "../../src/edit.svg"
         excludeImg.src = "../../src/delete.svg"
 
         userDataBox.append(depName, depDescription, companyName)
