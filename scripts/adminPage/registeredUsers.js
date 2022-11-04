@@ -1,8 +1,10 @@
 import { requestAllUsers } from "../requests/adminRequests/allUsers.js"
+import { deleteUser } from "./buttons/deleteUser.js"
 
 const allUsersDisplay = document.querySelector('.registered-users-display')
 
 export async function renderAllUsers() {
+    allUsersDisplay.innerText = ""
     const userList = await requestAllUsers()
     userList.forEach(user => {
         if (user.is_admin == false) {
@@ -41,6 +43,11 @@ export async function renderAllUsers() {
             options.append(edit, exclude)
             card.append(userDataBox, options)
             allUsersDisplay.append(card)
+
+            exclude.addEventListener('click', (event) => {
+                event.preventDefault()
+                deleteUser(user.uuid, user.username)
+            })
         }
     });
 }
