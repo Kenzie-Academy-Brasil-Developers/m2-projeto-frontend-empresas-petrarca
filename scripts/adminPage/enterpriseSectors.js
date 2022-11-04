@@ -1,6 +1,7 @@
 import { requestEnterprises } from "../requests/allEnterprises.js"
 import { requestDepartment, requestAllDepartments } from "../requests/adminRequests/enterpriseDepartments.js"
 import { editDepartments } from "./buttons/editDepartment.js"
+import { deleteDepartment } from "./buttons/deleteDepartment.js"
  
 const selectEnterprise = document.querySelector('#select-enterprise-adm')
 
@@ -74,6 +75,10 @@ export function departmentInsert(departments){
         edit.addEventListener('click', (event) => {
             // console.log()
             editDepartments(department.uuid, department.description)
+        })
+        exclude.addEventListener('click', (event)=> {
+            event.preventDefault()
+            deleteDepartment(department.uuid, department.name)
         })
     })
 }

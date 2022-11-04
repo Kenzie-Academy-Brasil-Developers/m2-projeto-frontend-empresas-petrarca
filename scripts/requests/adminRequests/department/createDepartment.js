@@ -15,7 +15,8 @@ export async function requesCreateDep(changes) {
         .then(res => res.json())
         .then(res => res)
         .then(res => {
-            console.log("Retorno API Criar setor", res)
+            // console.log("Retorno API Criar setor", res)
+            return res
         })
         .catch(err => console.log("Erro API criar Setor", err))
     return request
