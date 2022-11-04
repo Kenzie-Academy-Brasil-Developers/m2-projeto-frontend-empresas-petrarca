@@ -65,6 +65,7 @@
 .edit-textarea {
     min-height: 75px;
     padding: 10px 14px;
+    border: 1px solid var(--color-grey-400);
 }
 
 /* -----------delete--------------------- */
