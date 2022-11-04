@@ -2,7 +2,7 @@ import { selectEnterpriseAdm, enterpriseDepartmentFilter } from "../../scripts/a
 import { currentLoginVerify } from "../../scripts/pageProtection/loginCheck.js"
 import { renderAllUsers } from "../../scripts/adminPage/registeredUsers.js"
 import { logoutFunc } from "../../scripts/adminPage/buttons/logout.js"
-
+import { createDepartment } from "../../scripts/adminPage/buttons/createDepartment.js"
 
 window.onload = () => {
     currentLoginVerify()
@@ -11,3 +11,4 @@ window.onload = () => {
 logoutFunc()
 selectEnterpriseAdm()
 renderAllUsers()
+createDepartment()

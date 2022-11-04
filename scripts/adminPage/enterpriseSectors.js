@@ -1,6 +1,7 @@
 import { requestEnterprises } from "../requests/allEnterprises.js"
 import { requestDepartment, requestAllDepartments } from "../requests/adminRequests/enterpriseDepartments.js"
-
+import { editDepartments } from "./buttons/editDepartment.js"
+ 
 const selectEnterprise = document.querySelector('#select-enterprise-adm')
 
 export async function selectEnterpriseAdm() {
@@ -69,5 +70,9 @@ export function departmentInsert(departments){
         options.append(view, edit, exclude)
         card.append(userDataBox, options)
         departmentDisplay.append(card)
+
+        edit.addEventListener('click', (event) => {
+            editDepartments()
+        })
     })
 }
