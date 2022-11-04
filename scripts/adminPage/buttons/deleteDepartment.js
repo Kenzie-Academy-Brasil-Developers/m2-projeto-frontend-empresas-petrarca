@@ -16,6 +16,7 @@ export async function deleteDepartment(departmentId, name){
     closeModal.classList.add('close-delete-modal')
     modalCard.classList.add('modal-card', 'delete-modal-card')
     confirm.classList.add('delete-confirm-btn')
+    title.classList.add("delete-department-advice")
 
     closeModal.innerText = "X"
     title.innerText = `Realmente deseja deletar o departamento ${name} e demitir seus funcionários?`
