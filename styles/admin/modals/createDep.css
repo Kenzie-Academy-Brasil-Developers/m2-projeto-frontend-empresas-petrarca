@@ -25,10 +25,12 @@
     gap: 10px;
     margin: 15px 0 10px 0;
 }
+
 .modal-body input {
     height: 35px;
     border: 1px solid var(--color-grey-400);
 }
+
 .modal-body select {
     height: 32px;
     border: 1px solid var(--color-grey-400);
@@ -38,6 +40,7 @@
     display: flex;
     justify-content: space-between;
 }
+
 .close-modal {
     position: relative;
     bottom: 25px;
@@ -49,9 +52,17 @@
     font-weight: 500;
     font-size: 18px;
 }
+
 .create-dep-btn {
     height: 35px;
     background-color: var(--color-brand-200);
     color: #fff;
     border: 1px solid transparent;
+}
+
+/* -----------edit-------------------- */
+
+.edit-textarea {
+    min-height: 75px;
+    padding: 10px 14px;
 }

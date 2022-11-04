@@ -5,7 +5,7 @@ import { enterpriseDepartmentFilter } from "../enterpriseSectors.js"
 
 const bodySelect = document.querySelector('body')
 const createDepBtn = document.querySelector('.create-department-btn') 
-let select = document.querySelector('#select-enterprise-adm')
+export let select = document.querySelector('#select-enterprise-adm')
 
 export async function createDepartment(){
     createDepBtn.addEventListener('click', async (event) =>{

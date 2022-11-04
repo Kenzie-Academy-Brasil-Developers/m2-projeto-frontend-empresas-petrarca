@@ -72,7 +72,8 @@ export function departmentInsert(departments){
         departmentDisplay.append(card)
 
         edit.addEventListener('click', (event) => {
-            editDepartments()
+            // console.log()
+            editDepartments(department.uuid, department.description)
         })
     })
 }
