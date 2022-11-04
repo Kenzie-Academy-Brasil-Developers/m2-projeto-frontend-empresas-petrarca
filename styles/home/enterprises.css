@@ -1,0 +1,49 @@
+.enterprises-by-sector-section {
+display: flex;
+flex-direction: column;
+align-items: center;
+}
+
+select {
+    width: 90%;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    padding: 0 0 0 80px;
+    color: #fff;
+    font-size: 16px;
+    background-color: var(--color-brand-200);
+    margin-bottom: 15px;
+}
+
+.enterprises-by-sector-display {
+    display: flex;
+    padding: 8px 0px 16px 0px;
+    width: 90%;
+    overflow-x: scroll;
+    gap: 12px;
+}
+
+.filtered-enterprise-card {
+    min-width: 170px;
+    height: 135px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-bottom: 1.5px solid var(--color-brand-200);
+}
+
+.filtered-enterprise-card p {
+    margin-left: 6px;
+    margin-bottom: 6px;
+}
+
+.sector-wrapper {
+    border: 1px solid var(--color-brand-200);
+    width: fit-content;
+    padding: 2px 6px 0 2px;
+    border-radius: 16px;
+}
+.filtered-enterprise-infos{
+    padding-bottom: 6px;
+}

@@ -1,0 +1,23 @@
+.header-centralizer {
+    padding: 15px 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    width: 14px;
+    height: 14px;
+    background-color: var(--color-brand-100);
+    border-radius: 16px;
+}
+
+.brand {
+    font-size: 18px;
+}
+
+.logo-and-brand {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

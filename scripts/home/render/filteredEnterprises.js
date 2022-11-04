@@ -5,9 +5,14 @@ export async function sectorPrinter(companies){
     companies.forEach((company) => {
         const card = document.createElement('li')
         const name = document.createElement('h3')
+        const infoDiv = document.createElement('div')
         const openingHour = document.createElement('p')
         const sectorDisplay = document.createElement('div')
         const sector = document.createElement('p')
+
+        card.classList.add('filtered-enterprise-card')
+        sectorDisplay.classList.add('sector-wrapper')
+        infoDiv.classList.add('filtered-enterprise-infos')
 
         name.innerText = company.name
         openingHour.innerText = company.opening_hours
@@ -15,7 +20,8 @@ export async function sectorPrinter(companies){
 
 
         sectorDisplay.append(sector)
-        card.append(name, openingHour, sectorDisplay)
+        infoDiv.append(openingHour, sectorDisplay)
+        card.append(name, infoDiv)
         displayEnterprises.append(card)
     })
 }
