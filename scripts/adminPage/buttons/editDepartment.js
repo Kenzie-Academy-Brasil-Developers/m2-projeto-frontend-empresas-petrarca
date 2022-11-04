@@ -3,7 +3,6 @@ import { enterpriseDepartmentFilter } from "../enterpriseSectors.js"
 import { select } from "./createDepartment.js"
 
 const bodySelect = document.querySelector('body')
-
 export async function editDepartments(postId, postDesc) {
     
     const background = document.createElement('div')
@@ -44,10 +43,10 @@ export async function editDepartments(postId, postDesc) {
             description: textArea.value
         }
         await requestEditDep(changes, postId)
-        .then(
-            enterpriseDepartmentFilter(select.value)
-        )
+        enterpriseDepartmentFilter(select.value)
         .then(background.remove())
+        
+        
     })
     closeModal.addEventListener('click', (event) => {
         event.preventDefault()
