@@ -42,6 +42,9 @@ export async function createDepartment(){
         title.innerText = "Criar departamento"
         closeModal.innerText = "X"
         createBtn.innerText = "Criar o departamento"
+        departmentName.placeholder = "Nome do departamento"
+        description.placeholder = "Descrição"
+        
 
         header.append(title, closeModal)
         bodyModal.append(departmentName, description, selectEnterprise)
