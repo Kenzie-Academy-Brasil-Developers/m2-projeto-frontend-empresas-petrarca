@@ -26,6 +26,12 @@ header button {
 }
 
 @media (max-width: 600px) {
+    header button{
+        width: 38px;
+        position: relative;
+        top: 7px;
+    }
+
     .home-photo-wrapper {
         display: none;
     }
@@ -46,7 +52,7 @@ header button {
         background-color: #fff;
         width: 100%;
         gap: 15px;
-        height: 46px;
+        height: 60px;
         top: 50px;
         left: 0px;
     }
@@ -54,6 +60,7 @@ header button {
     .active button {
         height: 35px;
         width: 120px;
+        margin-bottom: 10px;
         border: 1px solid var(--color-blue-100);
         font-weight: bold;
         background-color: #fff;
