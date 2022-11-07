@@ -2,7 +2,9 @@ import { requestEnterprises } from "../requests/allEnterprises.js"
 import { requestDepartment, requestAllDepartments } from "../requests/adminRequests/enterpriseDepartments.js"
 import { editDepartments } from "./buttons/editDepartment.js"
 import { deleteDepartment } from "./buttons/deleteDepartment.js"
- 
+import { openSectorFunc }  from "./buttons/viewSector.js"
+
+
 const selectEnterprise = document.querySelector('#select-enterprise-adm')
 
 export async function selectEnterpriseAdm() {
@@ -72,8 +74,14 @@ export function departmentInsert(departments){
         card.append(userDataBox, options)
         departmentDisplay.append(card)
 
+
+        view.addEventListener('click', (event) => {
+            event.preventDefault()
+            openSectorFunc(department)
+        })
+
         edit.addEventListener('click', (event) => {
-            // console.log()
+            event.preventDefault()
             editDepartments(department.uuid, department.description)
         })
         exclude.addEventListener('click', (event)=> {

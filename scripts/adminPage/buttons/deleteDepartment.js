@@ -21,7 +21,6 @@ export async function deleteDepartment(departmentId, name){
     closeModal.innerText = "X"
     title.innerText = `Realmente deseja deletar o departamento ${name} e demitir seus funcionários?`
     confirm.innerText = "Confirmar"
-    console.log(departmentId)
 
     modalCard.append(closeModal, title, confirm)
     background.append(modalCard)

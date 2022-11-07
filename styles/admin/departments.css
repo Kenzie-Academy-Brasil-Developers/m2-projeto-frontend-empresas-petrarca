@@ -13,6 +13,8 @@ h3 {
 
 #select-enterprise-adm {
     display: flex;
+    position: relative;
+    right: 57git adpx;
     border-radius: 16px;
     padding: 3px 10px 3px 20px;
 }
