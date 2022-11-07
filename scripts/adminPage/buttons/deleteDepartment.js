@@ -1,6 +1,8 @@
 import { requestDeleteDep } from "../../../scripts/requests/adminRequests/department/deleteDepartment.js"
 import { enterpriseDepartmentFilter } from "../enterpriseSectors.js"
 import { select } from "./createDepartment.js"
+import { renderAllUsers } from "../registeredUsers.js"
+
 
 const bodySelect = document.querySelector('body')
 
@@ -33,8 +35,8 @@ export async function deleteDepartment(departmentId, name){
     confirm.addEventListener('click', async (event) => {
         event.preventDefault()
         await requestDeleteDep(departmentId)
-        
-        enterpriseDepartmentFilter(select.value)
-        .then(background.remove())
+        await enterpriseDepartmentFilter(select.value)
+        await renderAllUsers()
+    background.remove()
     })
 }

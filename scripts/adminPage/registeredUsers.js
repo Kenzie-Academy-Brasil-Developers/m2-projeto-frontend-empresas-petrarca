@@ -1,11 +1,15 @@
 import { requestAllUsers } from "../requests/adminRequests/allUsers.js"
 import { deleteUser } from "./buttons/deleteUser.js"
 import { editUser } from "./buttons/editUser.js"
+import { requestAllDepartments } from "../requests/adminRequests/enterpriseDepartments.js"
+
 const allUsersDisplay = document.querySelector('.registered-users-display')
 
 export async function renderAllUsers() {
     allUsersDisplay.innerText = ""
     const userList = await requestAllUsers()
+    const departmentList = await requestAllDepartments()
+    // console.log(enterprisesList,userList)
     userList.forEach(user => {
         if (user.is_admin == false) {
             const card = document.createElement('div')
@@ -29,8 +33,14 @@ export async function renderAllUsers() {
 
             depName.innerText = user.username
             depDescription.innerText = user.professional_level
-            companyName.innerText = user.department_uuid
-    
+            
+            
+            departmentList.forEach(department => {
+                if(user.department_uuid == department.uuid){
+                    companyName.innerText = department.companies.name
+                }
+            })
+
             // console.log(user.department_uuid)
             
             editImg.src = "../../src/edit.svg"

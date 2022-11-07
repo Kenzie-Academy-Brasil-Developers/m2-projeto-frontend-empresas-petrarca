@@ -2,7 +2,7 @@ import { requestUnhiredUsers } from "../../requests/adminRequests/usersWithoutWo
 import { hireUserRequest } from "../../requests/adminRequests/hireUser.js"
 import { requestDismissUser } from "../../requests/adminRequests/dismissUser.js"
 import { requestAllUsers } from "../../requests/adminRequests/allUsers.js"
-
+import { renderAllUsers } from "../registeredUsers.js"
 
 const bodySelect = document.querySelector('body')
 
@@ -72,11 +72,12 @@ export async function openSectorFunc(department) {
     })
 
 
-    hireBtn.addEventListener('click', (event) => {
+    hireBtn.addEventListener('click', async(event) => {
         event.preventDefault()
         if (userSelect.value != "") {
 
-            hireUserRequest(userSelect.value, department.uuid)  
+            await hireUserRequest(userSelect.value, department.uuid)
+            await renderAllUsers()
             background.remove()
         }
     })
@@ -108,9 +109,10 @@ async function dismissUsersFunc(departmentId, enterpriseName) {
             employeeCard.append(username, userStack, companyName, dismissBtn)
             sectionTwo.append(employeeCard)
 
-            dismissBtn.addEventListener('click', (event) => {
-                requestDismissUser(user.uuid)
-                .then(background.remove())
+            dismissBtn.addEventListener('click', async(event) => {
+                await requestDismissUser(user.uuid)
+                await renderAllUsers()
+                background.remove()
             })
         }
     })
