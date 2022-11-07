@@ -40,8 +40,6 @@ export async function renderAllUsers() {
                     companyName.innerText = department.companies.name
                 }
             })
-
-            // console.log(user.department_uuid)
             
             editImg.src = "../../src/edit.svg"
             excludeImg.src = "../../src/delete.svg"
