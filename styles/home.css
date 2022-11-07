@@ -1,6 +1,21 @@
+header button {
+    height: 35px;
+    width: 90px;
+    font-weight: 600;
+    background-color: #fff;
+    color: var(--color-blue-100);
+    border: 1px solid var(--color-blue-100);
+}
+
+.go-register-btn {
+    color: #fff;
+    background-color: var(--color-blue-100);
+}
+
 .home-photo {
     width: 100%;
 }
+
 .home-photo-wrapper {
     overflow: hidden;
     width: 25%;
@@ -11,9 +26,10 @@
 }
 
 @media (max-width: 600px) {
-    .home-photo-wrapper{
+    .home-photo-wrapper {
         display: none;
     }
+
     .login-register-box button {
         height: 25px;
     }
@@ -34,6 +50,7 @@
         top: 50px;
         left: 0px;
     }
+
     .active button {
         height: 35px;
         width: 120px;
@@ -42,6 +59,7 @@
         background-color: #fff;
         color: var(--color-blue-100);
     }
+
     .active .go-register-btn {
         background-color: var(--color-blue-100);
         color: #fff;
@@ -57,10 +75,12 @@
     }
 
     #hamburger-icon {
-        border-top: 2px solid ;
+        border-top: 2px solid;
         width: 20px;
     }
-    #hamburger-icon::after, #hamburger-icon::before {
+
+    #hamburger-icon::after,
+    #hamburger-icon::before {
         content: '';
         display: block;
         width: 20px;
