@@ -9,8 +9,11 @@ userRedirect()
 
 redirectBtns()
 dataCatcher()
-// export let kenzinho = {
-//     email: "kenzinho@mail.com",
-//     password: "1234",
-// }
-// requestLogin(kenzinho)
+const hamburguerBtn = document.querySelector('.btn-mobile')
+
+function toggleMenu (){
+    const loginOptions = document.querySelector('.login-register-box')
+    loginOptions.classList.toggle('active')
+}
+
+hamburguerBtn.addEventListener('click', event => toggleMenu())

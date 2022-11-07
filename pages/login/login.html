@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,28 +10,36 @@
     <link rel="stylesheet" href="../../styles/login-register/body.css">
     <title>Document</title>
 </head>
+
 <body>
     <header>
-        <div class="logo-and-brand">
-            <div class="logo"></div>
-            <h1 class="brand">Kenzie Empresas</h1>
-        </div>
-        <div class="login-register-box">
-            <button class="go-home-btn">Home</button>
-            <button class="go-register-btn">Cadastro</button>
+        <div class="header-centralizer">
+            <div class="logo-and-brand">
+                <div class="logo"></div>
+                <h1 class="brand">Kenzie Empresas</h1>
+            </div>
+            <div class="redirect-adapter">
+                <button class="btn-mobile">
+                    <span id="hamburger-icon"></span>
+                </button>
+                <div class="login-register-box">
+                    <button class="go-home-btn">Home</button>
+                    <button class="go-register-btn register-btn-header">Cadastro</button>
+                </div>
+            </div>
         </div>
     </header>
     <main>
         <figure class="enter-background-image">
-         
+        
         </figure>
         <section>
             <h3>Login</h3>
             <p>Preencha os campos para realizar login</p>
             <form class="login-form" action="">
-            <input id="login-email-input" type="email" placeholder="Seu e-mail">
-            <input id="login-password-input" type="text" placeholder="Sua senha">
-            <button class="submit-login-btn">Login</button>
+                <input id="login-email-input" type="email" placeholder="Seu e-mail">
+                <input id="login-password-input" type="text" placeholder="Sua senha">
+                <button class="submit-login-btn">Login</button>
             </form>
             <p class="or">Ou</p>
             <button class="go-register-btn login-to-register-option">Cadastrar-se</button>
@@ -38,4 +47,5 @@
     </main>
 </body>
 <script type="module" src="./loginPage.js"></script>
+
 </html>

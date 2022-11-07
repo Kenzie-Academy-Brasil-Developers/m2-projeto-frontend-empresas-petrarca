@@ -8,3 +8,12 @@ redirectBtns()
 window.onload = () => {
     userRedirect()
 }
+
+const hamburguerBtn = document.querySelector('.btn-mobile')
+
+function toggleMenu (){
+    const loginOptions = document.querySelector('.login-register-box')
+    loginOptions.classList.toggle('active')
+}
+
+hamburguerBtn.addEventListener('click', event => toggleMenu())

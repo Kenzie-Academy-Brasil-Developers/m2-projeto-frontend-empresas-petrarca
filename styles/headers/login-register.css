@@ -1,9 +1,14 @@
 header{
     width: 100%;
-    padding: 20px 15px 15px 15px;
+    padding: 15px 15px 15px 15px;
     display: flex;
     align-items: center;
-    justify-content: space-between;
+    justify-content: center;
+}
+
+.redirect-adapter {
+    display: flex;
+
 }
 
 .logo {

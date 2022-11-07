@@ -47,3 +47,48 @@ select {
 .filtered-enterprise-infos{
     padding-bottom: 6px;
 }
+
+@media(min-width: 600px){
+    .header-centralizer {
+        max-width: 1020px;
+    }
+    header{
+        margin-bottom: 20px;
+    }
+    select{
+        width: 500px;
+    }
+    
+    main {
+        display: flex;
+        justify-content: center;
+        gap: 50px;
+    
+    }
+
+    .home-photo-wrapper{
+        width: 500px;
+        height: 550px;
+        overflow: hidden;
+    }
+
+    .home-photo-section{
+        width: 500px;
+    }
+
+    .enterprises-by-sector-display{
+        overflow-y: scroll;
+        flex-wrap: wrap;
+        width: 500px;
+        height: 490px;
+        justify-content: center;
+        background-color: var(--color-grey-600);
+    }
+    .filtered-enterprise-card {
+        padding: 10px;
+        width: 400px;
+        height: 110px;
+        background-color: #fff;
+        margin-top: 15px;
+    }
+}
