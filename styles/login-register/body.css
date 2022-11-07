@@ -126,7 +126,7 @@ align-self: center;
 
 
     main {
-        height: 90vh;
+        height: 600px;
         padding-bottom: 20vh;
         background: url(../../src/mobileLoginPhoto.png);
     }
