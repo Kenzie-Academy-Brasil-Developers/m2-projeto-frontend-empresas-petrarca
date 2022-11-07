@@ -12,7 +12,7 @@ export async function insertCoWorkers() {
         const unEmployed = document.createElement('h4')
         unEmployed.classList.add('unemployed-state')
         unEmployed.innerText = "Você ainda não foi contratado"
-        coWorkersBox.append(unEmployed)
+        // coWorkersBox.append(unEmployed)
     } else {
         const header = document.createElement('div')
         const companyName = document.createElement('h4')
